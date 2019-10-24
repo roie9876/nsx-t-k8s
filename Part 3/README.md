@@ -244,11 +244,11 @@ NSX-T CNI Plugin comes within the "NSX-T Container" package. The package can be 
 
 ![](2019-05-28-18-57-46.png)
 
-In the current NSX-T version (2.4.1) , the zip file is named as "**nsx-container-2.4.1.13515827.zip**" . 
+In the current NSX-T version (2.5.0) , the zip file is named as "**nsx-container-2.5.0.14628220**" . 
 
 * Extract the zip file to a folder. 
 
-![](2019-05-28-19-06-21.png)
+![](2019-24-10-19-06-21.png)
 
 * Use SCP/SSH to copy the folder to the Ubuntu node. Winscp is used as the SCP tool on Windows client and the folder is copied to /home/vmware location on Ubuntu node.
 
