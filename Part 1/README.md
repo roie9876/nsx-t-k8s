@@ -35,11 +35,11 @@ All the other subnets are overlay networks
 Note: In Guide we planing to use NSX-T Data Center 2.5.
 The K8S integration is supported with two options:  
 
-Manager API:  
+_**Manager API:**_  
 In this the NSX-T constructs are configured from "Advanced Networking & Security" menu.
 ![](4.png)
 
-Policy API:  
+_**Policy API:**_  
 With Policy API the NSX-T constructs are configured from  the Network and Security Tab in the UI, also known as Simplified UI
 ![](3.png)
 
