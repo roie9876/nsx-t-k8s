@@ -10,7 +10,6 @@
 [Reachability](#Reachability)    
 [Tagging NSX-T Objects for K8S](#Tagging-NSX-T-Objects-for-K8S)   
 [Docker Installation](#Docker-Installation)   
-[CNI Plugin Installation](#CNI-Plugin-Installation)      
 [K8S Installation](#K8S-Installation)      
 
 # Ubuntu OS Installation
@@ -357,45 +356,6 @@ Server: Docker Engine - Community
 
 
 
-## Install NCP image on all masters and Workers 
-
-CNI is a Cloud Native Computing Foundation (CNCF) project. It is a set of specifications and libraries to configure network interfaces in Linux containers. It has a pluggable architecture hence third party plugins are supported.
-
-NSX-T CNI Plugin comes within the "NSX-T Container" package. The package can be downloaded (in _.zip_ format) from Downloads page for NSX-T, shown below.
-
-![](2.png)
-
-In the current NSX-T version (2.5.0) , the zip file is named as "**nsx-container-2.5.0.14628220**" . 
-
-* Extract the zip file to a folder. 
-
-![](2019-24-10-19-06-21.png)
-
-* Use SCP/SSH to copy the folder to the Ubuntu node. Winscp is used as the SCP tool on Windows client and the folder is copied to /home/vmware location on Ubuntu node.
-
-* **For all the installation steps mentioned below and following sections in this guide root level access will be used.**
-
-* Escalate to root in the shell
-
-
-<pre><code>
-vmware@k8s-master:~$ <b>sudo -H bash</b>
-[sudo] password for vmware:
-root@k8s-master:/home/vmware#
-</code></pre>
-
-* On the Ubuntu shell, navigate to "/home/vmware/nsx-container-2.5.0.14628220/Kubernetes/" folder, and then install NCP image shown below.
-
-<pre><code>
-root@k8s-master:/home/vmware/nsx-container-2.5.0.14628220/Kubernetes/# 
-<b>docker load  -i nsx-ncp-ubuntu-2.5.0.14628220.tar</b>
-Loaded image: registry.local/2.5.0.14628220/nsx-ncp-ubuntu:latest
-</code></pre>
-
-then we need to tag the ncp image as nsx-ncp:
-<pre><code>
-docker tag registry.local/2.5.0.14628220/nsx-ncp-ubuntu:latest nsx-ncp
-</code></pre>
 
 
 
