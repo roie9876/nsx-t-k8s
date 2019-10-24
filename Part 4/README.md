@@ -31,7 +31,7 @@ NAME              STATUS   AGE
 default           Active   4h36m
 kube-node-lease   Active   4h36m
 kube-public       Active   4h36m
-kube-system       Active   4h36m
+
 root@k8s-master:~#
 </code></pre>
 
@@ -105,44 +105,45 @@ On each K8S node, navigate to "/home/vmware/nsx-container-2.4.1.13515827/Kuberne
 
 _**NSX Container Plugin (NCP) and NSX Node Agent Pods use the same container image.**_
 
-<pre><code>
-root@k8s-master:/home/vmware/nsx-container-2.4.1.13515827/Kubernetes# <b>docker load -i nsx-ncp-ubuntu-2.4.1.13515827.tar</b>
-c854e44a1a5a: Loading layer [==================================================>]  132.8MB/132.8MB
-8ba4b4ea187c: Loading layer [==================================================>]  15.87kB/15.87kB
-46c98490f575: Loading layer [==================================================>]  9.728kB/9.728kB
-1633f88f8c9f: Loading layer [==================================================>]  4.608kB/4.608kB
-0e20f4f8a593: Loading layer [==================================================>]  3.072kB/3.072kB
-29ee2462776b: Loading layer [==================================================>]  3.072kB/3.072kB
-09df119f61a0: Loading layer [==================================================>]  10.84MB/10.84MB
-d2445ae12a7e: Loading layer [==================================================>]  28.16kB/28.16kB
-c02b8962769c: Loading layer [==================================================>]  284.7kB/284.7kB
-3465892d0467: Loading layer [==================================================>]  11.26kB/11.26kB
-9a6fc128cdcf: Loading layer [==================================================>]  1.625MB/1.625MB
-0ed84005a093: Loading layer [==================================================>]  7.168kB/7.168kB
-502420413898: Loading layer [==================================================>]   1.23MB/1.23MB
-c30860d2ecd5: Loading layer [==================================================>]    171kB/171kB
-8d69b3ad3ee8: Loading layer [==================================================>]  392.4MB/392.4MB
-Loaded image: registry.local/2.4.1.13515827/nsx-ncp-ubuntu:latest
-root@k8s-master:/home/vmware/nsx-container-2.4.1.13515827/Kubernetes#
-</code></pre>
+## Install NCP image on all masters and Workers 
 
-Make sure the image is now in the local Docker repository :
+CNI is a Cloud Native Computing Foundation (CNCF) project. It is a set of specifications and libraries to configure network interfaces in Linux containers. It has a pluggable architecture hence third party plugins are supported.
+
+NSX-T CNI Plugin comes within the "NSX-T Container" package. The package can be downloaded (in _.zip_ format) from Downloads page for NSX-T, shown below.
+
+![](2.png)
+
+In the current NSX-T version (2.5.0) , the zip file is named as "**nsx-container-2.5.0.14628220**" . 
+
+* Extract the zip file to a folder. 
+
+![](2019-24-10-19-06-21.png)
+
+* Use SCP/SSH to copy the folder to the Ubuntu node. Winscp is used as the SCP tool on Windows client and the folder is copied to /home/vmware location on Ubuntu node.
+
+* **For all the installation steps mentioned below and following sections in this guide root level access will be used.**
+
+* Escalate to root in the shell
+
 
 <pre><code>
-root@k8s-master:/home/vmware/nsx-container-2.4.1.13515827/Kubernetes# <b>docker images</b>
-REPOSITORY                                     TAG                 IMAGE ID            CREATED             SIZE
-k8s.gcr.io/kube-proxy                          v1.14.2             5c24210246bb        12 days ago         82.1MB
-k8s.gcr.io/kube-apiserver                      v1.14.2             5eeff402b659        12 days ago         210MB
-k8s.gcr.io/kube-controller-manager             v1.14.2             8be94bdae139        12 days ago         158MB
-k8s.gcr.io/kube-scheduler                      v1.14.2             ee18f350636d        12 days ago         81.6MB
-<b>registry.local/2.4.1.13515827/nsx-ncp-ubuntu</b>   latest              5714a979b290        4 weeks ago         518MB
-k8s.gcr.io/coredns                             1.3.1               eb516548c180        4 months ago        40.3MB
-k8s.gcr.io/etcd                                3.3.10              2c4adeb21b4f        5 months ago        258MB
-k8s.gcr.io/pause                               3.1                 da86e6ba6ca1        17 months ago       742kB
-root@k8s-master:/home/vmware/nsx-container-2.4.1.13515827/Kubernetes#
+vmware@k8s-master:~$ <b>sudo -H bash</b>
+[sudo] password for vmware:
+root@k8s-master:/home/vmware#
 </code></pre>
 
-Make sure to update the image name from "nsx-ncp-ubuntu" => "nsx-ncp" , since the yaml files, for both NCP and NSX Node Agent, are referring to image name as "nsx-ncp"
+* On the Ubuntu shell, navigate to "/home/vmware/nsx-container-2.5.0.14628220/Kubernetes/" folder, and then install NCP image shown below.
+
+<pre><code>
+root@k8s-master:/home/vmware/nsx-container-2.5.0.14628220/Kubernetes/# 
+<b>docker load  -i nsx-ncp-ubuntu-2.5.0.14628220.tar</b>
+Loaded image: registry.local/2.5.0.14628220/nsx-ncp-ubuntu:latest
+</code></pre>
+
+then we need to tag the ncp image as nsx-ncp:
+<pre><code>
+docker tag registry.local/2.5.0.14628220/nsx-ncp-ubuntu:latest nsx-ncp
+</code></pre>
 
 <pre><code>
 root@k8s-master:/home/vmware/nsx-container-2.4.1.13515827/Kubernetes# <b> docker tag registry.local/2.4.1.13515827/nsx-ncp-ubuntu:latest nsx-ncp:latest</b>
