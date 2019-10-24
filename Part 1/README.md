@@ -37,7 +37,7 @@ The K8S integration is supported with two options:
 
 Manager API:
 In this the NSX-T constructs are configured from "Advanced Networking & Security" menu.
-![](2019-10-24 at 15.24.4)
+![](2019-10-24 at 15.24.4.png)
 
 Policy API:
 With Policy API the NSX-T constructs are configured from  the Network and Security Tab in the UI, also known as Simplified UI
