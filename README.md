@@ -3,7 +3,9 @@ by Dumlu Timuralp [@dumlutimuralp](https://twitter.com/dumlutimuralp) / [LinkedI
 by Hakan Akkurt [LinkedIn](https://www.linkedin.com/in/hakkurt/) / [Github](https://github.com/hakkurt)  
 by Roie Ben Haim [LinkedIn](https://www.linkedin.com/in/roie9876/)
 
-Special thanks to Raymond De Jong [LinkedIn](https://www.linkedin.com/in/dejongraymond/) / [His Blog](http://www.cloudxtreme.info/) for his feedback to make this article better
+Special thanks to Raymond De Jong [LinkedIn](https://www.linkedin.com/in/dejongraymond/) / [His Blog](http://www.cloudxtreme.info/) for his feedback to make this article better  
+
+test  
 
 _**This disclaimer informs readers that the views, thoughts, and opinions expressed in this series of posts belong solely to the author, and not necessarily to the author’s employer, organization, committee or other group or individual.**_
 
