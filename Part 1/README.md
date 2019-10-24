@@ -196,7 +196,7 @@ A new Tier 0 Logical Router named as "T0-K8S-Domain" is provisioned. Tier 0 Logi
 
 A new uplink interface is provisioned on the Tier 0 Logical Router. This interface is connected to the VLAN logical switch/segment provisioned in the earlier step (Logical Switch : "T0UplinkLS").  Also notice that this is the step where the Edge Transport Node, that the uplink is connected to, needs to be specified. This way the the management plane knows where to place the SR component of the Tier 0.
 
-![](2019-05-16-20-37-15.png)
+![](2019-10-24-23-19-32.png)
 
 Similarly the second uplink interface for Tier 0 Logical Router is provisioned as shown below. This interface is also connected to the same  VLAN Logical Switch, ("T0UplinkLS") Notice that the Edge Transport Node selection is specified again; this way the management plane knows where to place the _**STANDBY**_ SR component of the Tier 0. Hence this time Edge Transport Node#2 is selected.
 
