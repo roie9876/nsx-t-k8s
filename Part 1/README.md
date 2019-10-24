@@ -41,7 +41,7 @@ Manager API:
 In this the NSX-T constructs are configured from "Advanced Networking & Security" menu.  
 
 Policy API:
-![](2019-10-24 at 14.26.52)
+![](3)
 With Policy API from the Network and Security Tab in the UI, also known as Simplified UI)**_
 
 
