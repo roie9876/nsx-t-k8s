@@ -44,6 +44,7 @@ With Policy API the NSX-T constructs are configured from  the Network and Securi
 ![](3.png)
 
 
+_**In this guide we will work with the Policy API**_
 
 
 # Fabric Preperation  
