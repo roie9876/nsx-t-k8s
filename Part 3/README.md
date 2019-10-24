@@ -238,7 +238,7 @@ CNI is a Cloud Native Computing Foundation (CNCF) project. It is a set of specif
 
 NSX-T CNI Plugin comes within the "NSX-T Container" package. The package can be downloaded (in _.zip_ format) from Downloads page for NSX-T, shown below.
 
-![](2019-05-28-18-55-48.png)
+![](2.png)
 
 ![](2019-05-28-18-56-07.png)
 
