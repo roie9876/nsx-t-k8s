@@ -3,8 +3,10 @@
 [Home Page](https://github.com/dumlutimuralp/nsx-t-k8s)
 
 This guide outlines the configuration steps needed to implement a basic logical network topology. The assumption is vCenter, ESX Hosts and NSX-T Manager has already been deployed.
-I forked this guide from amazing works done by Dumlu Timuralp and all the credit belone to him!!!!
- https://github.com/dumlutimuralp/nsx-t-k8s
+I forked this guide from amazing works done by Dumlu Timuralp and all the credits belone to Dumlu !!!!
+Here is the link to the original works:
+
+https://github.com/dumlutimuralp/nsx-t-k8s
 
 # Table Of Contents
 
@@ -32,7 +34,12 @@ VLAN 30 : Transport VLAN for Geneve Tunnelling (ESX Host' s and NSX-T Edge Trans
 VLAN 40 : Routing VLAN for External Physical Router peering (Tier 0's Uplink is part of this VLAN, 10.190.4.0 /24)  
 All the other subnets are overlay networks  
 
-_**Note: In NSX-T Data Center 2.4.1, K8S integration is supported only when the NSX-T constructs are configured from "Advanced Networking & Security" menu. (NOT from the other menus in the UI, also known as Simplified UI)**_
+_**Note: In Guide we plnaing to use NSX-T Data Center 2.5. The K8S integration is supported with two options: 
+Manager API: 
+In this the NSX-T constructs are configured from "Advanced Networking & Security" menu.  
+
+Policy API: 
+Or with the new Policy API from the other menus in the UI, also known as Simplified UI)**_ 
 
 # Fabric Preperation  
 [Back to Table of Contents](#Table-Of-Contents)
