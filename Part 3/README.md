@@ -240,10 +240,6 @@ NSX-T CNI Plugin comes within the "NSX-T Container" package. The package can be 
 
 ![](2.png)
 
-![](2019-05-28-18-56-07.png)
-
-![](2019-05-28-18-57-46.png)
-
 In the current NSX-T version (2.5.0) , the zip file is named as "**nsx-container-2.5.0.14628220**" . 
 
 * Extract the zip file to a folder. 
@@ -262,17 +258,17 @@ vmware@k8s-master:~$ <b>sudo -H bash</b>
 root@k8s-master:/home/vmware#
 </code></pre>
 
-* On the Ubuntu shell, navigate to "/home/vmware/nsx-container-2.4.1.13515827/Kubernetes/ubuntu_amd64/" folder, and then install CNI as shown below.
+* On the Ubuntu shell, navigate to "/home/vmware/nsx-container-2.5.0.14628220/Kubernetes/" folder, and then install NCP image shown below.
 
 <pre><code>
-root@k8s-master:/home/vmware/nsx-container-2.4.1.13515827/Kubernetes/ubuntu_amd64# <b>dpkg -i nsx-cni_2.4.1.13515827_amd64.deb</b>
-Selecting previously unselected package nsx-cni.
-(Reading database ... 59693 files and directories currently installed.)
-Preparing to unpack nsx-cni_2.4.1.13515827_amd64.deb ...
-Unpacking nsx-cni (2.4.1.13515827) ...
-Setting up nsx-cni (2.4.1.13515827) ...
-[ ok ] Reloading apparmor configuration (via systemctl): apparmor.service.
-root@k8s-master:/home/vmware/nsx-container-2.4.1.13515827/Kubernetes/ubuntu_amd64#
+root@k8s-master:/home/vmware/nsx-container-2.5.0.14628220/Kubernetes/# 
+<b>docker load  -i nsx-ncp-ubuntu-2.5.0.14628220.tar</b>
+Loaded image: registry.local/2.5.0.14628220/nsx-ncp-ubuntu:latest
+</code></pre>
+
+then we need to tag the ncp image as nsx-ncp:
+<pre><code>
+docker tag registry.local/2.5.0.14628220/nsx-ncp-ubuntu:latest nsx-ncp
 </code></pre>
 
 # Open vSwitch Installation
