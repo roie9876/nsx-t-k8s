@@ -8,10 +8,9 @@
 [IPAM and IP Pools](#IPAM-and-IP-Pools)   
 [Firewall Sections](#Firewall-Sections)  
 [Reachability](#Reachability)    
-[Tagging NSX-T Objects for K8S](#Tagging-NSX-T-Objects-for-K8S)  
+[Tagging NSX-T Objects for K8S](#Tagging-NSX-T-Objects-for-K8S)
+[Docker Installation](#Docker-Installation) 
 [CNI Plugin Installation](#CNI-Plugin-Installation)   
-[Open vSwitch (OVS) Installation](#Open-vSwitch-Installation)  
-[Docker Installation](#Docker-Installation)   
 [K8S Installation](#K8S-Installation)      
 
 # Ubuntu OS Installation
