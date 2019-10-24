@@ -1,7 +1,7 @@
 ## VMware NSX-T and Kubernetes (K8S) Guide
 by Dumlu Timuralp [@dumlutimuralp](https://twitter.com/dumlutimuralp) / [LinkedIn](https://www.linkedin.com/in/dumlutimuralp/)  
-by Hakan Akkurt [LinkedIn](https://www.linkedin.com/in/hakkurt/) / [Github](https://github.com/hakkurt)
-by Roie Ben Haim [LinkedIn](https://www.linkedin.com/in/roie9876 /
+by Hakan Akkurt [LinkedIn](https://www.linkedin.com/in/hakkurt/) / [Github](https://github.com/hakkurt)  
+by Roie Ben Haim [LinkedIn](https://www.linkedin.com/in/roie9876 
 
 Special thanks to Raymond De Jong [LinkedIn](https://www.linkedin.com/in/dejongraymond/) / [His Blog](http://www.cloudxtreme.info/) for his feedback to make this article better
 
